@@ -1,13 +1,15 @@
 //cloze card Constructor
-function ClozeCard (front, back){
-    this.front = front;
-    this.back = back;
+function ClozeCard (text, cloze){
+    this.cloze = cloze;
+    this.full = text;
+    this.partial = text.replace(cloze, " ... ");
 }
 
 //display contents prototype
-ClozeCard.prototype.showFrontBack = function(){
-        console.log("FRONT: " + this.front);
-        console.log("BACK: " + this.back);
+ClozeCard.prototype.showCard = function(){
+        console.log("PARTIAL  : " + this.partial);
+        console.log("CLOZE    : " + this.cloze);
+        console.log("FULL TEXT: " + this.full);
 }
 
 //export to main.js
